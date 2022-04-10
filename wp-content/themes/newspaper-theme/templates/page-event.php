@@ -5,6 +5,6 @@
 
 get_header();
 
-get_field('events_calendar');
+the_content();
 
 get_footer();

@@ -1,12 +1,12 @@
 <?php
 
+const API_NAME = 'share-products/v1';
+
 add_action('rest_api_init', 'product_control_init');
 
 function product_control_init()
 {
-    $namespace = 'share-products/v1';
-
-    register_rest_route($namespace, 'user', [
+    register_rest_route(API_NAME, 'user', [
         'methods'  => 'POST',
         'callback' => 'user_add_call',
         'permission_callback' => '__return_true',
@@ -24,7 +24,7 @@ function product_control_init()
         ],
     ]);
 
-    register_rest_route($namespace, 'products', [
+    register_rest_route(API_NAME, 'products', [
         'methods'  => 'POST',
         'callback' => 'get_products',
         'permission_callback' => '__return_true'
